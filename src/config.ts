@@ -3,8 +3,8 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://ord721.art",
   author: "wgw.eth",
-  desc: "An overview and specification of the ORD-721 protocol - a standard for creating and verifying Bitcoin Ordinals collections.",
-  title: "ord721.art - A hub for the ORD-721 protocol and everything around it",
+  desc: "A standard for creating and verifying Bitcoin Ordinals collections. Overview, specification, and an implementation as HTTP API.",
+  title: "ord721.art - The hub for ORD-721 protocol and everything around it",
   ogImage: "ord721-art-og-image.png",
   lightAndDarkMode: true,
   postPerPage: 3,
