@@ -4,8 +4,7 @@ export const SITE: Site = {
   website: "https://ord721.art",
   author: "wgw.eth",
   desc: "An overview and specification of the ORD-721 protocol - a standard for creating and verifying Bitcoin Ordinals collections.",
-  title:
-    "ord721.art - A hub for everything around ORD-721 protocol for Bitcoin Ordinals",
+  title: "ord721.art - A hub for everything around the ORD-721 protocol",
   ogImage: "ord721-art-og-image.png",
   lightAndDarkMode: true,
   postPerPage: 3,
