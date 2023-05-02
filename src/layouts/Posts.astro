@@ -22,12 +22,12 @@ const next = pageNum < totalPages ? "" : "disabled";
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
-  <Header activeNav="posts" />
+  <Header />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
         posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+          <Card href={`/pages/${slugify(data)}`} frontmatter={data} />
         ))
       }
     </ul>
@@ -38,7 +38,7 @@ const next = pageNum < totalPages ? "" : "disabled";
       <nav class="pagination-wrapper" aria-label="Pagination">
         <LinkButton
           disabled={prev === "disabled"}
-          href={`/posts${pageNum - 1 !== 1 ? "/" + (pageNum - 1) : ""}`}
+          href={`/pages${pageNum - 1 !== 1 ? "/" + (pageNum - 1) : ""}`}
           className={`mr-4 select-none ${prev}`}
           ariaLabel="Previous"
         >
@@ -49,7 +49,7 @@ const next = pageNum < totalPages ? "" : "disabled";
         </LinkButton>
         <LinkButton
           disabled={next === "disabled"}
-          href={`/posts/${pageNum + 1}`}
+          href={`/pages/${pageNum + 1}`}
           className={`ml-4 select-none ${next}`}
           ariaLabel="Next"
         >
@@ -66,7 +66,7 @@ const next = pageNum < totalPages ? "" : "disabled";
 
 <style>
   .pagination-wrapper {
-    @apply mt-auto mb-8 flex justify-center;
+    @apply mb-8 mt-auto flex justify-center;
   }
   .disabled {
     @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;

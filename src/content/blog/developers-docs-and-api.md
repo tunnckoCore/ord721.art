@@ -1,17 +1,14 @@
 ---
-author: Sat Naing
-pubDatetime: 2022-09-25T15:20:35Z
-title: Customizing AstroPaper theme color schemes
-postSlug: ""
-featured: false
+author: tunnckoCore
+pubDatetime: 2022-04-15T04:04:04Z
+title: Documentation for developers
+postSlug: /developers
+featured: true
 draft: false
-tags:
-  - color-schemes
-  - docs
 ogImage: ""
 description:
-  How you can enable/disable light & dark mode; and customize color schemes
-  of AstroPaper theme.
+  Documentation for developers on how to integrate the ORD-721 compatible collections,
+  and how to use the HTTP API and its endpoints.
 ---
 
 This post will explain how you can enable/disable light & dark mode for the website. Moreover, you'll learn how you can customize color schemes of the entire website.

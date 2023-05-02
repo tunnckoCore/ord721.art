@@ -6,6 +6,8 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import htmlMinifier from "astro-html-minifier";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -17,6 +19,7 @@ export default defineConfig({
     }),
     react(),
     sitemap(),
+    htmlMinifier(),
   ],
   markdown: {
     remarkPlugins: [

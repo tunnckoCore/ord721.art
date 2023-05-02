@@ -1,0 +1,18 @@
+---
+import { LOCALE } from "@config";
+
+interface Props {
+  datetime: string | Date;
+}
+
+const { datetime }: Props = Astro.props;
+const myDatetime = new Date(datetime);
+
+const date = myDatetime.toLocaleDateString(LOCALE, {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<div>{date}</div>

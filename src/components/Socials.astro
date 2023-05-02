@@ -1,24 +1,28 @@
 ---
 import { SOCIALS } from "@config";
-import LinkButton from "./LinkButton.astro";
-import socialIcons from "@assets/socialIcons";
+import LinkButton from "@components/LinkButton.astro";
+// import socialIcons from "@assets/socialIcons";
 
 export interface Props {
   centered?: boolean;
 }
 
+// eslint-disable-next-line
 const { centered = false } = Astro.props;
+
+// <span class="ml-1">{social.linkText || ""}</span>
+// <Fragment className="" set:html={socialIcons[social.name]} />
 ---
 
-<div class={`social-icons ${centered ? "flex" : ""}`}>
+<div class="social-icons pl-4">
   {
     SOCIALS.filter(social => social.active).map(social => (
       <LinkButton
         href={social.href}
-        className="link-button"
+        className="link-button mr-4"
         title={social.linkTitle}
       >
-        <Fragment set:html={socialIcons[social.name]} />
+        {social.name}
       </LinkButton>
     ))
   }
@@ -29,6 +33,6 @@ const { centered = false } = Astro.props;
     @apply flex-wrap justify-center gap-1;
   }
   .link-button {
-    @apply p-2 hover:rotate-6 sm:p-1;
+    @apply p-2 sm:p-1;
   }
 </style>

@@ -1,4 +1,5 @@
 import Fuse from "fuse.js";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Card from "@components/Card";
 import slugify from "@utils/slugify";
@@ -23,7 +24,7 @@ export default function SearchBar({ searchList }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputVal, setInputVal] = useState("");
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-    null
+    null,
   );
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -78,9 +79,9 @@ export default function SearchBar({ searchList }: Props) {
           </svg>
         </span>
         <input
-          className="block w-full rounded border border-skin-fill 
+          className="block w-full rounded border border-skin-fill
         border-opacity-40 bg-skin-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-opacity-75 
+        pr-3 placeholder:italic placeholder:text-opacity-75
         focus:border-skin-accent focus:outline-none"
           placeholder="Search for anything..."
           type="text"
@@ -107,7 +108,7 @@ export default function SearchBar({ searchList }: Props) {
         {searchResults &&
           searchResults.map(({ item, refIndex }) => (
             <Card
-              href={`/posts/${slugify(item.data)}`}
+              href={`/pages/${slugify(item.data)}`}
               frontmatter={item.data}
               key={`${refIndex}-${slugify(item.data)}`}
             />
