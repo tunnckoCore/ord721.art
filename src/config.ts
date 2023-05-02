@@ -2,8 +2,8 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://ord721.art",
-  author: "tunnckoCore / wgw.eth",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  author: "wgw.eth",
+  desc: "An overview and specification of the ORD-721 protocol - a standard for creating and verifying Bitcoin Ordinals collections.",
   title: "ord721.art",
   ogImage: "ord721-art-og-image.png",
   lightAndDarkMode: true,
