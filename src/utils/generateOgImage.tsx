@@ -106,7 +106,7 @@ const ogImage = (text: string) => {
             </span>
 
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
+              {SITE.title.split(" ")[0]}
             </span>
           </div>
         </div>
