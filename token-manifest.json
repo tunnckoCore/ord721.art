@@ -1,0 +1,23 @@
+{
+  "protocol": {
+    "name": "ORD721A",
+    "version": "1.0",
+    "type": "token"
+  },
+  // could eventually be a string to inscription id? hm.
+  "token": {
+    "id": 1,
+    //  eventually `traits` could also be a string to
+    // a ORD721 Trait manifest inscription? hm.
+    "traits": {
+      "body": "green",
+      "eyes": 3,
+      "toy": "milk"
+    },
+    "uri": "data:image/png;base64,4jkh64k5j3h64536="
+  },
+  "collection": {
+    "inscriptionId": "d0162e09766a998cd6ea192f66411befcd7ec3383111bbb42e20ca29899a3972i0",
+    "hash": "ff8674d225d9018ccee26068b522f022d188dd71f6ff1658759d0870d8622eD12"
+  }
+}

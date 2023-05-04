@@ -1,0 +1,32 @@
+{
+  "protocol": {
+    "name": "ORD721A",
+    "version": "1.0",
+    "type": "collection"
+  },
+  "collection": {
+    "name": "Cats on Ordinals3",
+    "symbol": "catords",
+    "description": "A cats collection on Bitcoin ordinals",
+    "maxSupply": 2000,
+    "maxPerAddress": 3,
+    "maxBlockHeight": 800784, // consider latest is 800744
+
+    // if `mintPrice` is a number, then it's considered amount in satoshis
+    "mintPrice": {
+      "amount": 42069,
+      // $PEPE token deploy inscription
+      "token": "54d5fe82f5d284363fec6ae6137d0e5263e237caf15211078252c0d95af8943ai0"
+    },
+
+    // could be a string to an inscription id
+    // that contains the info like `ORD721 Royalty` manifest
+    "royalty": {
+      "address": "bc1p_royalty_addr", // could be the `creatorAddress` too
+      "amount": 6.9,
+      "type": "percent"
+    },
+    "creatorAddress": "bc1pk42g9szvyl7xxdpdszn5ql6ce2mzc0wmy05y97qfmu7hs8uftnns5tc37k",
+    "creatorSignature": "HOi5mvhgifpbnLOri8rqpilCYGAv1QtHFh2xE69G0CwyDwQdmPvp+HlMh40vXhvuVx8x+49iYwwWxtaMSdwzMMw="
+  }
+}
