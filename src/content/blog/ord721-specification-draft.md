@@ -51,10 +51,10 @@ interface ORD721Token {
   protocol: ORD721Protocol; // with type: 'token'
   token: {
     id: number;
-    // if string, it's considered an inscription id to ORD721Traits
-    traits?: string | { [key: string]: any | unknown };
-    attributes?: any; // same as ERC721's attributes
     uri: string;
+    // if string, it's considered an inscription id to ORD721Traits
+    traits?: string | ORD721Traits.traits;
+    attributes?: any; // same as ERC721's attributes
     dna?: string;
   };
   collectionHash: string;
@@ -486,7 +486,7 @@ The resulted hash should be equal to the hash given at the `hash` field.
   },
   "collectionHash": "ff8674d225d9018ccee26068b522f022d188dd71f6ff1658759d0870d8622eD12",
   "collectionInscriptionId": "d0162e09766a998cd6ea192f66411befcd7ec3383111bbb42e20ca29899a3972i0",
-
+  // "hash": "the token inscription hash",
   "signature": "my signature"
 }
 ```
@@ -497,8 +497,12 @@ Verification of a collection is almost the same thing.
 
 The process should be the following:
 
-1. Get the JSON, remove `creatorSignature` and sign the whole thing.
-2. Validate both are equal.
-3. If they are not - fail
-4. if they are, put it again on `creatorSignature`
-5. Then hash the whole thing and compare that with `collectionHash` too.
+1. Get the JSON, remove `collection.creatorSignature` and the `hash`
+2. Sign the whole thing with your wallet.
+3. Validate if both the result and the `collection.creatorSignature` are equal
+4. If they are not - fail
+5. if they are, put it again on `collection.creatorSignature`
+6. Hash the whole thing with SHA3
+7. Validate if both the old `hash` and the new result are equal.
+8. If they are not - fail
+9. Otherwise - the collection is verified.
