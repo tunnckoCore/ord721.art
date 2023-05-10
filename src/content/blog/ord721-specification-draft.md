@@ -34,6 +34,7 @@ interface ORD721Collection {
     // 1) if number - considered as amount of satoshis,
     //    which to send to creatorAddress on each "mint"
     // 2) if string - consider an inscription id to ORD721Funds inscription
+    //    and parse and resolve the info from there
     // 3) otherwise - an object, see the interface below
     funds: number | string | ORD721Funds.funds;
 
@@ -45,6 +46,7 @@ interface ORD721Collection {
     // 1) if number - considered as amount of satoshis,
     //    which to send to creatorAddress on each sale
     // 2) if string - considered as inscription id to ORD721Royalty inscription
+    //    and parse and resolve the info from there
     // 3) otherwise - an object, see the interface below
     royalty?: number | string | ORD721Royalty.royalty;
     twitter?: string;
