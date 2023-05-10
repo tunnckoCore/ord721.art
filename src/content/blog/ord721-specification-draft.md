@@ -30,15 +30,23 @@ interface ORD721Collection {
     creatorAddress: string;
     creatorSignature: string;
 
-    // mint price: 0 if free mint, could be an object too
-    funds: number | ORD721Funds.funds;
+    // if 0 - do not ask for more than the inscription cost/fee
+    // 1) if number - considered as amount of satoshis,
+    //    which to send to creatorAddress on each "mint"
+    // 2) if string - consider an inscription id to ORD721Funds inscription
+    // 3) otherwise - an object, see the interface below
+    funds: number | string | ORD721Funds.funds;
 
     maxSupply?: number;
     maxPerAddress?: number;
     maxBlockHeight?: number;
 
-    // if string, it's considered an inscription id to ORD721Royalty
-    royalty?: string | ORD721Royalty.royalty;
+    // if 0 - do not send royalties
+    // 1) if number - considered as amount of satoshis,
+    //    which to send to creatorAddress on each sale
+    // 2) if string - considered as inscription id to ORD721Royalty inscription
+    // 3) otherwise - an object, see the interface below
+    royalty?: number | string | ORD721Royalty.royalty;
     twitter?: string;
     discord?: string;
     website?: string;
@@ -61,7 +69,7 @@ interface ORD721Token {
   // in case of ORD721A we can inscribe the collection manifest early,
   // so we'll be able to have collectionInscriptionId for each token in advance
   collectionInscriptionId?: string;
-  hash: string;
+  digest: string;
 }
 
 // optional
